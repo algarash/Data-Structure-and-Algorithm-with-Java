@@ -17,28 +17,30 @@ public class Single_Linkedlist<E> {
 
     public E first() {
         if (isEmpty()) return null;
-        return head.getElement();
+        return head.getElement();      // returns (but does not remove) the first element
     }
 
     public E last() {
         if (isEmpty()) return null;
-        return tail.getElement();
+        return tail.getElement();  // returns (but does not remove) the last element
     }
 
     public void addfirst(E el)
     {
         head = new Node<E> (el,head);
         if (size == 0)
-            tail = head;
+            tail = head;      // adds element e to the front of the list
+                             // create and link a new node
         size++;
     }
     public void addlast(E el)
     {
-       Node<E>newest= new Node<E>(el,null);
+       Node<E>  newest= new Node<E>(el,null);
        if (isEmpty())
            head=newest; // if no elements
        else
-       tail.setNext(newest); // if there are elements
+       tail.setNext(newest); // if there were elements
+        //////////
        tail=newest;
        size++;
     }
@@ -59,7 +61,7 @@ public class Single_Linkedlist<E> {
 
     public static class Node<E>{
         private E element;
-        private Node<E>next;
+        private Node<E>next; // here is the node of creating in instance "objects "
 
         public Node(E element, Node<E> next) {
             this.element = element;
